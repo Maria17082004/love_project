@@ -4,10 +4,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from asyncio import run
-from transformers import AutoModelForSequenceClassification
-from transformers import BertTokenizerFast
 from database import connection
-import torch
 import numpy as np
 from tqdm import tqdm
 from dao.dao import TgStatisticsDAO, UserDAO, VkUserDAO, VkActionDAO, VkPostDAO, TgUserDAO, TgGroupStatsDAO, TgUserGroupActionDAO, TgStatisticsDAO, TgGroupMessageDAO, TgChannelStatsDAO 
@@ -88,6 +85,7 @@ love_words = [
     "Нежность моя", "Счастье моё", "Тигрёнок", "Левушка",
     "Крошка", "Моя радость", "Котенок"
 ]
+print(res[:3])
 for text, time in res:
     count = 0
     for word in love_words:
